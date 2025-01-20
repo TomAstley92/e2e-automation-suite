@@ -8,7 +8,7 @@ export default defineConfig({
   fullyParallel: true, // Allow tests in different files to run fully in parallel
   workers: 4, // Specify the number of parallel workers (default: number of CPU cores)
   use: {
-    baseURL: 'https://automationintesting.online', // Set the base URL
+    baseURL: 'https://automationintesting.online/#/admin', // Set the base URL
     headless: true, // Run tests in headless mode
     trace: 'on-first-retry', // Collect trace on first retry
     screenshot: 'only-on-failure', // Take screenshots on failure
