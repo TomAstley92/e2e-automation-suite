@@ -1,108 +1,64 @@
-# E2E Automation Suite
-
-This project is an end-to-end (E2E) test automation suite built using [Playwright](https://playwright.dev/) with TypeScript for testing web applications. The suite is configured to use a base URL and supports parallel test execution.
+This project is an end-to-end (E2E) test automation suite built using [Playwright](https://playwright.dev/) with TypeScript. It supports parallel execution, detailed reporting, and accessibility testing.
 
 ---
 
-## **Setup Instructions**
+## **Setup**
 
-Follow the steps below to pull the repository, install dependencies, and run the tests.
+### Prerequisites
+- **Node.js**: v16 or later
+- **Git**: Installed
 
-### **1. Clone the Repository**
-Pull the repository from GitHub:
+### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/TomAstley92/e2e-automation-suite.git
-```
-
-Navigate into the project directory:
-
-```bash
 cd e2e-automation-suite
-```
-
----
-
-### **2. Install Dependencies**
-Make sure you have [Node.js](https://nodejs.org/) installed (version 16 or later).
-
-Run the following command to install dependencies:
-
-```bash
 npm install
 ```
 
-This will:
-- Install all required dependencies specified in `package.json`.
-- Automatically install Playwright browsers via the `postinstall` script.
+---
 
-If the browsers are not installed, you can manually run:
+## **Usage**
 
+### Run Tests
+- **Headless Mode** (default): 
+  ```bash
+  npm test
+  ```
+- **Debug Mode**:
+  ```bash
+  npm run test:debug
+  ```
+- **Headed Mode**:
+  ```bash
+  npm run test:headed
+  ```
+
+### View Reports
+Generate and view the HTML report after test execution:
 ```bash
-npx playwright install
+npx playwright show-report
 ```
 
 ---
 
-### **3. Run Tests**
-
-#### **Run All Tests**
-To run the full test suite:
-
-```bash
-npm test
-```
-
-#### **Run Tests in Headed Mode**
-To run tests with a visible browser (non-headless):
-
-```bash
-npm run test:headed
-```
-
-#### **Run Tests in Debug Mode**
-To debug tests:
-
-```bash
-npm run test:debug
-```
-
----
-
-### **4. Parallel Execution**
-The suite is configured to run tests in parallel. Parallelism is handled automatically based on the number of CPU cores, but you can customize it by modifying the `workers` setting in `playwright.config.ts`.
-
----
-
-### **5. Folder Structure**
-
+## **Folder Structure**
 ```plaintext
 e2e-automation-suite/
-├── e2e/                          # Test files
-│   ├── admin-auth.spec.ts
-│   ├── booking.spec.ts
-│   ├── contact.spec.ts
-│   ├── error-handling.spec.ts
-│   ├── map.spec.ts
-│   ├── performance.spec.ts
-│   ├── room-management.spec.ts
-│   └── visual.spec.ts
-├── node_modules/                 # Node.js dependencies
-├── playwright-report/            # Test reports
-├── test-results/                 # Test result artifacts
-├── .gitignore                    # Ignored files and directories
-├── package.json                  # Project metadata and scripts
-├── playwright.config.ts          # Playwright configuration
-├── tsconfig.json                 # TypeScript configuration
-└── README.md                     # Project documentation
+├── e2e/               # Test scripts and Page Objects
+├── playwright-report/ # Reports
+├── test-results/      # Test artifacts
+├── playwright.config.ts # Test configuration
+├── package.json       # Dependencies and scripts
+└── tsconfig.json      # TypeScript configuration
 ```
 
 ---
 
-### **6. Configuration**
-
-#### **Base URL**
-The `playwright.config.ts` file defines a base URL, which allows tests to use relative paths. You can modify the base URL for different environments:
+## **Configuration**
+Update base URLs or other settings in `playwright.config.ts`:
 
 ```typescript
 use: {
@@ -110,60 +66,7 @@ use: {
 },
 ```
 
-#### **Parallel Execution**
-Parallel execution is enabled by default. You can adjust the number of workers in `playwright.config.ts`:
-
-```typescript
-workers: 4, // Number of parallel workers
-```
-
----
-
-### **7. HTML Reports**
-After running tests, you can view the HTML report:
-
-```bash
-npx playwright show-report
-```
-
-This will open a detailed test report in your default browser.
-
----
-
-### **8. Cleaning Up**
-To clean the `dist` directory and any generated files:
-
-```bash
-npm run clean
-```
-
----
-
-### **9. Additional Commands**
-
-- **Build TypeScript Files**:
-  ```bash
-  npm run build
-  ```
-
-- **Manual Browser Installation**:
-  ```bash
-  npx playwright install
-  ```
-
 ---
 
 ## **Requirements**
-- Node.js (16 or later)
-- Git
-
----
-
-### **Contributing**
-Feel free to fork the repository, make changes, and submit pull requests.
-
----
-
-### **License**
-This project is licensed under the MIT License.
-
+- **Node.js** v16 or later
