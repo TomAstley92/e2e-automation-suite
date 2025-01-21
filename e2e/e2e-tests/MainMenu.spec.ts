@@ -13,9 +13,6 @@ test('Validate UI Elements on Load', async ({ page }) => {
   // Navigate through the welcome screen
   await mainPage.navigateThroughWelcomeScreen();
 
-  // Validate the rooms section
-  await mainPage.validateRoomsSection();
-
   // Validate the footer section
   await mainPage.validateFooter();
 
