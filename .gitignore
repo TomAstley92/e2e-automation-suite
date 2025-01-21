@@ -15,8 +15,5 @@ playwright-report/
 # Environment Files
 .env
 
-# Ignore Test-Results
-test-results/
-
 # Ignore Package-lock-json
 package-lock.json
