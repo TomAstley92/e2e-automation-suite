@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",                   // Latest JavaScript features
-    "module": "commonjs",                 // Node.js compatibility
-    "outDir": "./dist",                   // Output folder for compiled files
-    "rootDir": "./e2e",                   // Root directory for source files
-    "esModuleInterop": true,              // Interoperability with CommonJS
-    "strict": true,                       // Enable all strict type checking
-    "forceConsistentCasingInFileNames": true, // Enforce consistent import casing
-    "skipLibCheck": true,                 // Skip type checking for .d.ts files
-    "resolveJsonModule": true,            // Allow importing JSON files
-    "sourceMap": true                     // Enable source maps for debugging
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,                   // Use separate source map files
+    "inlineSources": true,               // Include TypeScript source in the source map
+    "incremental": true
   },
-  "include": ["e2e/**/*.ts"],             // Include all .ts files under e2e/
-  "exclude": ["node_modules", "dist"]    // Exclude unnecessary folders
+  "include": ["e2e/**/*.ts", "Pages/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
